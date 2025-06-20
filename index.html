@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link href="src/styles/main.less" rel="stylesheet">
+    <link href="src/styles/toolbar.less" rel="stylesheet">
+    <link href="src/styles/picker.less" rel="stylesheet">
     <title>dotty</title>
 </head>
+
 <body>
     <div id="container">
         <canvas id="editor"></canvas>
+        <div id="toolbar">
+            <span id="toolbar-header">Toolbar</span>
+            <div id="toolbar-content">
+                <span>Color Palette</span>
+                <div id="palette"></div>
+                <button>Import</button>
+                <button>Export</button>
+                <button>Add to Palette</button><br />
+                <div id="color-picker">
+                    <button id="current-color" class="color-button"></button>
+                    <div id="color-picker-popup" class="hidden">
+                        <div class="picker-preview" id="picker-preview"></div>
+                        <label>R <input type="range" min="0" max="255" id="picker-r"></label>
+                        <label>G <input type="range" min="0" max="255" id="picker-g"></label>
+                        <label>B <input type="range" min="0" max="255" id="picker-b"></label>
+                        <input type="text" id="picker-hex" maxlength="7" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    </div>
+    <div id="tooltip"></div>
+    <script src="src/lib/ntc.js"></script>
     <script src="src/scripts/canvas.ts" type="module"></script>
 </body>
+
 </html>

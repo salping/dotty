@@ -1,18 +1,49 @@
+@font-face {
+    font-family: 'Proggy Clean';
+    src: url("../fonts/ProggyClean.ttf");
+}
+
+:root {
+    --toolbar-size: 250px;
+    --toolbar-header: #314976;
+    --toolbar-background: #151617;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    user-select: none;
+    font-family: 'Proggy Clean';
 }
 
 #container {
     width: 100vw;
     height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr var(--toolbar-size);
 }
 
 #content-view {
     background-color: green;
 }
+
 #editor {
     height: 100%;
     width: 100%;
+}
+
+#toolbar {
+    height: 100%;
+    background: black;
+}
+
+#tooltip {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    color: white;
+    border: 2px solid #3a3b3d;
+    padding: 5px;
+    background-color: var(--toolbar-background);
 }
